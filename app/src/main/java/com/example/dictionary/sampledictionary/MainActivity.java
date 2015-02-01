@@ -2,9 +2,10 @@ package com.example.dictionary.sampledictionary;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.view.Menu;
 import android.view.MenuItem;
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -20,6 +21,16 @@ public class MainActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void onSend(View view) {
+        TextView textView1 = (TextView) findViewById(R.id.text1);
+        String text1 = textView1.getText().toString();
+
+        TextView textView2 = (TextView) findViewById(R.id.text2);
+        String text2 = textView2.getText().toString();
+
+        LearnOnTheWay.addNewPhrase(this, text1, "English", text2, "Spanish");
     }
 
     @Override
