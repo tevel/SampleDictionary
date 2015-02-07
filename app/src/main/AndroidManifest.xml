@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".LearnOnTheWayService" android:exported="false" />
+        <receiver android:name=".TranslationReceiver" >
+            <intent-filter>
+                <action android:name="info.tevel.TRANSLATION_REQUEST" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
